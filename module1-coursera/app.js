@@ -19,6 +19,7 @@
 				if($scope.items.length==0)
 				{
 					$scope.response="Enter some items please!";
+					$scope.img_name="nibbles.jpg";
 				}
 				else
 				{
