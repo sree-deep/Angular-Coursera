@@ -1,10 +1,35 @@
-<html>
+<!DOCTYPE html>
+<html ng-app="letterCalculator">
 
-<head>
-<title>Hello Coursera</title>
-</head>
-<body>
-<h1>hello</h1>
+	<head>
+		<meta charset="utf-8">
+		
+		<script src="angular.min.js"></script>
+		<script src="angular.min.js.map"></script>
+		<script src="app.js"></script>
 
-</body>
+		<title>Hello Coursera</title>
+	</head>
+	
+	<body ng-controller="myController">
+		
+		<h1>Count Letters!!</h1>
+		
+		<div>
+		
+			<input type="text" ng-model="name"  ng-keyup="upp(); count();">
+			Number of letters in your name is {{value}} {{name}}
+			
+		</div>
+		
+		<div>
+		
+			<br>
+			<button ng-click="flip();"><img ng-src="{{image_name}}"/></button>
+			<br>
+			
+		
+		</div>
+	
+	</body>
 </html>
