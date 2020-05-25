@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="ShoppingListCheckOff">
+
+	<head>
+		<meta charset="utf-8">
+		
+		<script src="angular.min.js"></script>
+		<script src="angular.min.js.map"></script>
+		<script src="app.js"></script>
+
+		<title>WELCOME TO SHOPSITE!</title>
+	</head>
+	
+	
+	<body>
+	<h1>SHOPSITE :D</h1><br>
+	
+		
+		
+		<h2><pre>   TO BUY</pre></h2>
+		<div ng-controller="ToBuyController as to_buy">
+		
+			<ol>
+			<pre>
+			<li ng-repeat="item in to_buy.items">Buy {{item.quantity}} {{item.name}}(s) <button ng-click="to_buy.add($index);to_buy.msg();">Buy</button>
+			</li></pre>
+			</ol>
+			
+			<pre><div >    {{to_buy.m}}</div></pre>
+		</div>
+		
+		
+		
+		
+		<h2><pre>   ALREADY BOUGHT</pre></h2>
+		<div ng-controller="AlreadyBoughtController as bought" ng-if="!bought.msg">
+		
+			<ol>
+			<pre>
+			<li ng-repeat="item in bought.items">Bought {{item.quantity}} {{item.name}}(s) </li>
+			</pre>
+			</ol>
+			<pre>
+			 <div ng-if="bought.msg();">     {{bought.m}}</div>
+			</pre>
+	
+		</div>
+	
+	
+	
+	
+	</body>
+
+</html>
