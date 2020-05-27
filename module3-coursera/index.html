@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html ng-app="NarrowItDownApp">
+
+
+	<head>
+		<script src="angular.min.js"></script>
+		<script src="angular.min.js.map"></script>
+		<script src="app.js"></script>
+		
+		<title>Coursera</title>
+	</head>
+
+	
+	<body>
+	
+		<h1></h1>
+		<div ng-controller="NarrowItDownController as list">
+		
+			<input type="text" ng-model="searchTerm" placeholder="search item (ex:egg)">
+			<button ng-click="list.get_items(searchTerm)">Narrow It Down For Me</button>
+			
+			<!--<pre>
+			<ul ng-hide="list.error_msg">
+			<li ng-repeat="item in list.items"> [NAME:{{item.name}}] [SHORT NAME:{{item.short_name}}] [DESCRIPTION: {{item.description}}]<button ng-click="list.remove(item.short_name);">Remove</button></li>
+			</ul>
+	
+			
+			</pre>
+			-->
+			
+			<found-items my-list="list"></found-items>
+			
+		
+		</div>
+	
+	
+	</body>
+
+
+</html>

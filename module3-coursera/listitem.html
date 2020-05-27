@@ -1,0 +1,6 @@
+<pre>
+			<ul ng-hide="list.error_msg">
+			<li ng-repeat="item in list.items"> [NAME:{{item.name}}] [SHORT NAME:{{item.short_name}}] [DESCRIPTION: {{item.description}}]<button ng-click="list.remove(item.short_name);">Remove</button></li>
+			</ul>
+<p ng-if="list.error_msg">    Nothing found!</p>
+</pre>
