@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html ng-app="Demo">
+
+		<head>
+			<script src="angular.min.js"></script>
+			<script src="angular.min.js.map"></script>
+			<script src="app3.js"></script>
+		</head>
+
+
+		<body>
+		
+			<div ng-controller="MyController as list">
+			
+				<input type="text" ng-model="name">
+				<input type="number" ng-model="quantity">
+				
+				<button ng-click="list.add(name,quantity)">add</button>
+				
+				<ol>
+					<li ng-repeat="item in list.items">{{item}}</li>
+				</ol>
+			
+			</div>
+		
+		</body>
+
+</html>
