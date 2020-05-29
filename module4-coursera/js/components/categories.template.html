@@ -1,5 +1,5 @@
 <ul>
-    <li ng-repeat="cat in $ctrl.items" style="list-style: none;">
+    <li id="l1" ng-repeat="cat in $ctrl.items" style="list-style: none;">
    <button ui-sref="categories.items({ categoryShortName: cat.short_name })" class="btn btn-primary btn-xs">
       {{ cat.name }} [ {{ cat.short_name }} ]
       </button>

@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>	
+<html ng-app="MyApp">
+
+<head>
+
+	<script src="angular.min.js"></script>
+	<script src="angular.min.js.map"></script>
+	<script src="app6.js"></script>
+	
+	<style>
+		.ng-touched.ng-invalid
+		{
+			border:2px red solid;
+		}
+		
+		.ng-touched.ng-valid
+		{
+			border:2px green solid;
+		}
+	
+	</style>
+
+</head>
+
+<body ng-controller="FormController as reg">
+
+	<form name="regForm" novalidate>
+	
+		<input type="text" name="username" ng-model="reg.user.username" required minlength="4" ng-maxlength="10" placeholder="choose a username">
+		{{reg.user.username}}
+		<span 
+		ng-if="(regForm.username.$error.minlength || regForm.username.$error.required) && regForm.username.$touched">
+		username must be 4 characters long</span>
+		<span 
+		ng-if="regForm.username.$error.maxlength && regForm.username.$touched">
+		username must be within 10 characters length</span>
+		
+		<br><br>
+		
+		<input type="email" name="email" required placeholder="type in your email" ng-model="reg.user.email">
+		{{reg.user.email}}
+		<span ng-if="regForm.email.$invalid && regForm.email.$touched">
+		email should be of the format xxx@domain.com</span>
+		
+		<br><br>
+		
+		<input  type="text" name="phone" placeholder="phone number" ng-model="reg.user.phone" pattern="(\d{10})">
+		{{reg.user.phone}}
+		<span ng-if="regForm.phone.$invalid && regForm.phone.$touched">phone number must be 10 digits long</span>
+		
+		<br><br>
+		<button ng-disabled="regForm.$invalid" ng-click="reg.submit_form()">submit</button>
+		
+		<br><br>
+		
+		
+		<div id="info" ng-if="reg.completed">
+		<h3>Summary</h3>
+		Username: {{reg.user.username}}<br>
+		Email: {{reg.user.email}}<br>
+		Phone: {{reg.user.phone}}<br>
+		
+		</div>
+	
+	</form>
+
+</body>
+
+
+</html>
